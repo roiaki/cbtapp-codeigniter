@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>会員登録</title>
 </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- BootstrapのCSS読み込み -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>会員登録</title>
+</head>
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand fw-bold ml-5" href="../events">CBT APP</a>
@@ -45,25 +52,11 @@
       </div>
   </nav>
 </header>
-
 <body>
   <?php echo form_open('login/auth'); ?>
   <div class="d-flex flex-column align-items-center justify-content-center shadow-lg p-5 m-5 bg-white rounded-circle">
-    <h2>会員登録ページ</h2>
+    <h2>ログイン</h2>
     <?php echo $this->session->flashdata('msg'); ?>
-
-    <div class="form-group">
-      <label for="name">お名前</label>
-      <input type="text" 
-             class="form-control" 
-             id="name" 
-             name="name" 
-             preg_replace_callback="名前" 
-             placeholder="お名前" 
-             required
-             autofocus
-      >
-    </div>
 
     <div class="form-group">
       <label for="email">メールアドレス</label>
