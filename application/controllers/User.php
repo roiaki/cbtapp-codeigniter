@@ -14,6 +14,11 @@ class User extends CI_Controller{
     {
         $this->load->view('blogview');
     }
+
+    public function register()
+    {
+        $this->load->view('user/register_view');
+    }
  
    
 }
