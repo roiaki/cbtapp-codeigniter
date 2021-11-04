@@ -8,13 +8,14 @@ class User_model extends CI_Model {
         $this->load->database();
     }
 
-    public function set_user()
+    public function register_user()
     {
-        $data = array( 
-            'name' => $this->input->post('name'),
-            'email' => $this->input->post('email'),
-            'password' => md5($this->input->post('password'))
-        );
+        $data =
+            [
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'password' => md5($this->input->post('password') )
+            ];
         return $this->db->insert('user', $data);
     }
 }
