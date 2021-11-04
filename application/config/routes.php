@@ -37,8 +37,9 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
-$route['default_controller'] = "Blog";
+// 通常のコントローラとメソッドを指定するような URI が表されていないときに、 
+// ロードすべきデフォルトコントローラを設定
+$route['default_controller'] = "Blog"; 
 $route['404_override'] = '';
 
 
