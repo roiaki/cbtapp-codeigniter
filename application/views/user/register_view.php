@@ -38,8 +38,8 @@
               </ul>
             </div>
           <?php } else { ?>
-            <li class="nav-item"><a class="dropdown-item" href="<?php echo base_url('test_app/user/login_view'); ?>">ログイン</a></li>
-            <li class="nav-item"><a class="dropdown-item" href="<?php echo base_url('test_app/user/register_view'); ?>">会員登録</a></li>
+            <li class="nav-item"><a class="dropdown-item" href="<?php echo base_url('test_app/user/login'); ?>">ログイン</a></li>
+            <li class="nav-item"><a class="dropdown-item" href="<?php echo base_url('test_app/user/register'); ?>">会員登録</a></li>
           <?php } ?>
         </ul>
       </div>

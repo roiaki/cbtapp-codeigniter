@@ -6,7 +6,11 @@ application/cache/*
 
 application/logs/*
 !application/logs/index.html
+<<<<<<< HEAD
 !application/logs/.htaccess
 
 /vendor
 /tests
+=======
+!application/logs/.htaccess
+>>>>>>> parent of 7282532... test設定
