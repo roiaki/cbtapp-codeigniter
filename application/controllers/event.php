@@ -64,6 +64,7 @@ class Event extends CI_Controller {
         
     }
 
+    // 詳細ページ表示処理
     public function show($id)
     {
         $data['html_title'] ='詳細';
@@ -72,5 +73,16 @@ class Event extends CI_Controller {
         $data['events'] = $this->Event_model->get_event($id);
         $this->load->view('commons/head_view', $data);
         $this->load->view('events/show', $data);
+    }
+
+    // 削除処理
+    public function delete($id)
+    {
+        $user_id = $this->session->userdata('user_id');
+        $event_id = $id;
+
+        $this->db->delete('events', ['id' => $event_id, 'user_id' => $user_id] );
+        
+        redirect('event/index');
     }
 }
