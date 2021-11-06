@@ -1,7 +1,7 @@
 <body>
  
   <div class="container">
-    <h3>出来事一覧</h3>
+    <h2>出来事一覧</h2>
 
     <table class="table table-striped table-bordered">
       <thead>
@@ -13,19 +13,21 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($events as $event) { ?>
+      <?php foreach ($results as $row) { ?>
         <tr>
-          <td><?php echo $event['id']; ?></td>
-          <td><?php echo $event['title']; ?></td>
-          <td><?php echo $event['content']; ?></td>
-          <td><?php echo $event['updated_at']; ?>
-            <p><a href="show.php?event_id=<?php echo $event['id']; ?> ">詳細</a></p>
-          </td>
+          <td><?php echo $row->id; ?></td>
+          <td><?php echo $row->title; ?></td>
+          <td><?php echo $row->content; ?></td>
+          <td><?php echo $row->updated_at; ?></td>
         </tr>
         <?php  } ?>
+        
+          
+         
+       
       </tbody>
     </table>
-    <a href="create.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">新規作成</a>
+    <a href="<?php echo base_url('event/create'); ?>" class="btn btn-primary btn-lg" role="button" aria-pressed="true">新規作成</a>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

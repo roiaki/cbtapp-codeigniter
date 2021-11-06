@@ -1,0 +1,58 @@
+<?php
+
+class Event extends CI_Controller {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Event_model');
+        $this->load->model('user_model');
+        $this->load->helper(array('form', 'url'));
+        $this->load->library(array('session', 'form_validation'));
+
+        if (ENVIRONMENT === 'development') {
+            $this->output->enable_profiler();
+        }
+    }
+    
+    public function index()
+    {
+        $data['results'] = $this->Event_model->get_event();
+        
+        //exit;
+        $this->load->view('commons/head_view');
+        $this->load->view('events/index', $data);
+    }
+
+    public function create()
+    {
+        $data['user_id'] = $this->session->userdata('user_id');
+
+        $this->load->view('commons/head_view');
+        $this->load->view('events/create', $data);
+    }
+
+    public function store()
+    {
+        $user_id = $this->session->userdata('user_id');
+        //var_dump($user_id);
+        //exit;
+
+        $title = $this->input->post('title');
+        $content = $this->input->post('content');
+        $created_at = date("Y-m-d G:i:s");
+        $updated_at = date("Y-m-d G:i:s");
+        var_dump($title);
+        $data = [
+            'user_id' => $user_id,
+            'title' => $title,
+            'content' => $content,
+            'created_at' => $created_at,
+            'updated_at' => $updated_at
+        ];
+        $this->db->insert('events', $data);
+
+        redirect('event/index');
+        
+    }
+}
