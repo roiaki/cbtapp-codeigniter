@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost'; // https://example.com -> localhostへ変更
+$config['base_url'] = 'http://localhost/test_app/'; // https://example.com -> localhostへ変更
 
 /*
 |--------------------------------------------------------------------------

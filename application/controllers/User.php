@@ -9,6 +9,10 @@ class User extends CI_Controller{
         //$this->load->helper('url');  // for anchor()
         $this->load->helper(array('form', 'url'));
         $this->load->library(array('session', 'form_validation'));
+
+        if (ENVIRONMENT === 'development') {
+            $this->output->enable_profiler();
+}
     }
 
     public function index()
@@ -39,15 +43,15 @@ class User extends CI_Controller{
         if ( $this->form_validation->run() === FALSE ) {
             $this->load->view('user/register');
         } else {
-            if ( $this->user_model->sregister_user() ) {
+            if ( $this->user_model->register_user() ) {
                 $this->session->set_flashdata('msg_success', '登録成功');
-                redirect('user/login_view');
+                redirect('/user/login_view');
             } else {
                 $this->session->set_flachdata('msg_error', '登録失敗');
-                redirect('user/register_view');
+                redirect('/user/register_view');
             }
         }
-        $this->load->view('user/register_view');
+        $this->load->view('/user/register_view');
     }
 
     
