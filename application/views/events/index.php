@@ -18,7 +18,9 @@
             <td><?php echo $row->id; ?></td>
             <td><?php echo $row->title; ?></td>
             <td><?php echo $row->content; ?></td>
-            <td><?php echo $row->updated_at; ?></td>
+            <td><?php echo $row->updated_at; ?>
+              <p><a href="<?php echo base_url('event/show'); ?>/<?php echo $row->id; ?>">詳細</a></p>
+            </td>
           </tr>
         <?php  } ?>
         

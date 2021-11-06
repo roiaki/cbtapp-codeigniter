@@ -17,7 +17,7 @@ class Event extends CI_Controller {
     
     public function index()
     {
-        $data['results'] = $this->Event_model->get_event();
+        $data['results'] = $this->Event_model->get_events();
         $data['html_title'] ='出来事一覧';
         //exit;
         $userdata = $this->session->all_userdata();
@@ -57,9 +57,20 @@ class Event extends CI_Controller {
             'created_at' => $created_at,
             'updated_at' => $updated_at
         ];
+        // insert はmocelに分離しよう
         $this->db->insert('events', $data);
 
         redirect('event/index');
         
+    }
+
+    public function show($id)
+    {
+        $data['html_title'] ='詳細';
+        
+        $data['user_id'] = $this->session->userdata('user_id');
+        $data['events'] = $this->Event_model->get_event($id);
+        $this->load->view('commons/head_view', $data);
+        $this->load->view('events/show', $data);
     }
 }
