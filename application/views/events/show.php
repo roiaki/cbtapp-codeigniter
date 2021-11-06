@@ -6,38 +6,30 @@
     <table class="table table-striped table-bordered">
       <thead>
         <tr class="table-primary">
-
           <th>出来事id</th>
           <th>タイトル</th>
           <th>内容</th>
           <th>更新日</th>
         </tr>
       </thead>
+      
       <tbody>
-        <?php foreach ($events as $event) { ?>
-          <tr>
-            <td><?php echo $event->id; ?></td>
-            <td><?php echo $event->title; ?></td>
-            <td><?php echo $event->content; ?></td>
-            <td><?php echo $event->updated_at; ?></td>
-          </tr>
-        <?php  } ?>
+        <tr>
+          <td><?php echo $event->id; ?></td>
+          <td><?php echo $event->title; ?></td>
+          <td><?php echo $event->content; ?></td>
+          <td><?php echo $event->updated_at; ?></td>
+        </tr>
       </tbody>
+      
     </table>
-    <a href="<?php echo base_url('threecolumn/create'); ?>/<?php echo $event->id; ?>" 
-      class="btn btn-success btn-lg" role="button" 
-      aria-pressed="true">この出来事を元に3コラムを作成
+    <a href="<?php echo base_url('threecolumn/create'); ?>/<?php echo $event->id; ?>" class="btn btn-success btn-lg" role="button" aria-pressed="true">この出来事を元に3コラムを作成
     </a>
 
-    <a href="<?php echo base_url('event/edit'); ?>/<?php echo $event->id; ?>" 
-       class="btn btn-primary btn-lg" 
-       role="button" aria-pressed="true">編集
+    <a href="<?php echo base_url('event/edit'); ?>/<?php echo $event->id; ?>" class="btn btn-primary btn-lg" role="button" aria-pressed="true">編集
     </a>
 
-    <a href="<?php echo base_url('event/delete'); ?>/<?php echo $event->id; ?>" 
-       class="btn btn-danger btn-lg" 
-       role="button" onclick="confirmDelete();return false;" 
-       aria-pressed="true">削除
+    <a href="<?php echo base_url('event/delete'); ?>/<?php echo $event->id; ?>" class="btn btn-danger btn-lg" role="button" onclick="confirmDelete();return false;" aria-pressed="true">削除
     </a>
   </div>
 

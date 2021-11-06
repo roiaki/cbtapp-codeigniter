@@ -11,9 +11,17 @@ class Event_model extends CI_Model {
     public function get_events()
     {
         $user_id = $this->session->userdata('user_id');
-        //var_dump("user_id". $user_id);
-        $query = $this->db->get_where('events', ['user_id' => $user_id]);
         
+        $sql = "SELECT * 
+                FROM 
+                  events 
+                WHERE 
+                  user_id = $user_id 
+                ORDER BY 
+                  updated_at 
+                DESC";
+        $query = $this->db->query($sql);
+             
         return $query->result();
     }
 
@@ -23,12 +31,12 @@ class Event_model extends CI_Model {
         $user_id = $this->session->userdata('user_id');
         $query = $this->db->get_where('events', ['user_id' => $user_id, 'id' => $event_id] );
         
-        return $query->result();
+        return $query->row();
     }
 
     public function update()
     {
-        
+
     }
 
 }
