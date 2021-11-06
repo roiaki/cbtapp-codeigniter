@@ -39,7 +39,7 @@
 */
 // 通常のコントローラとメソッドを指定するような URI が表されていないときに、 
 // ロードすべきデフォルトコントローラを設定
-$route['default_controller'] = "Blog"; 
+$route['default_controller'] = ""; 
 $route['404_override'] = '';
 
 

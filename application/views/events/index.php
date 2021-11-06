@@ -13,13 +13,13 @@
         </tr>
       </thead>
       <tbody>
-      <?php foreach ($results as $row) { ?>
-        <tr>
-          <td><?php echo $row->id; ?></td>
-          <td><?php echo $row->title; ?></td>
-          <td><?php echo $row->content; ?></td>
-          <td><?php echo $row->updated_at; ?></td>
-        </tr>
+        <?php foreach ($results as $row) { ?>
+          <tr>
+            <td><?php echo $row->id; ?></td>
+            <td><?php echo $row->title; ?></td>
+            <td><?php echo $row->content; ?></td>
+            <td><?php echo $row->updated_at; ?></td>
+          </tr>
         <?php  } ?>
         
           

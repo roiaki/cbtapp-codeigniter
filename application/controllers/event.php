@@ -18,17 +18,24 @@ class Event extends CI_Controller {
     public function index()
     {
         $data['results'] = $this->Event_model->get_event();
-        
+        $data['html_title'] ='出来事一覧';
         //exit;
-        $this->load->view('commons/head_view');
+        $userdata = $this->session->all_userdata();
+        var_dump($userdata);
+        $data['email'] = $userdata['email'];
+        $data['user_id'] = $userdata['user_id'];
+        $data['is_logged_in'] = $userdata['is_logged_in'];
+        //var_dump($userdata['user_id']);
+
+        $this->load->view('commons/head_view', $data);
         $this->load->view('events/index', $data);
     }
 
     public function create()
     {
         $data['user_id'] = $this->session->userdata('user_id');
-
-        $this->load->view('commons/head_view');
+        $data['html_title'] ='新規作成';
+        $this->load->view('commons/head_view', $data);
         $this->load->view('events/create', $data);
     }
 

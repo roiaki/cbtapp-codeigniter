@@ -36,7 +36,7 @@
     </div>
 
     <button type="submit" class="col-1 form-control btn btn-success">
-      登録する
+      ログイン
     </button>
   </div>
   <?php echo form_close(); ?>

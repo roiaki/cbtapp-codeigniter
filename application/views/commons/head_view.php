@@ -1,3 +1,16 @@
+<?php
+
+$hour = date("H");
+
+if (5 <= $hour && $hour <= 12) {
+  $msg = "おはようございます";
+} else if (17 < $hour) {
+  $msg = "こんばんは";
+} else {
+  $msg = "こんにちは";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,10 +28,10 @@
       <div class="collapse navbar-collapse" id="nav-bar">
         <ul class="navbar-nav mr-auto"></ul>
         <ul class="navbar-nav">
-          <?php if (isset($user_id)) { ?>
+          <?php if ( isset($is_logged_in) ) { ?>
 
             <div class="d-flex align-items-center">
-              ID <?php echo $user_id; ?> 番 <?php echo $user_name; ?> さん、<?php echo $msg; ?>　
+              ID <?php echo $user_id; ?> 番 <?php echo $email; ?> さん、<?php echo $msg; ?>　
             </div>
             <li class="nav-item"><a class="nav-link" href="../user/info.php">説明</a></li>
             <li class="nav-item"><a class="nav-link" href="../events">出来事一覧</a></li>
@@ -31,7 +44,7 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a class="nav-link" href="../events/action/logout.php">ログアウト</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('user/logout'); ?>">ログアウト</a></li>
                 <li><a class="nav-link" href="../withdraw/delete_confirm.php">退会</a></li>
               </ul>
             </div>

@@ -7,9 +7,7 @@ class User extends CI_Controller{
         parent::__construct();
         $this->load->model('user_model');
         $this->load->helper(array('form', 'url'));
-        $this->load->library(array('session', 'form_validation'));
-
-        
+        $this->load->library(array('session', 'form_validation')); 
     }
 
 
@@ -74,8 +72,8 @@ class User extends CI_Controller{
                 $this->session->set_userdata('email', $email);
                 $this->session->set_userdata('user_id', $user['id']);
                 $this->session->set_userdata('is_logged_in', true);
-                $_SESSION['user_id'] = $user['id'];
-                //var_dump($_SESSION);
+                
+                var_dump($_SESSION['email']);
                 //exit;
                 redirect('event/index');
             } 
@@ -85,5 +83,17 @@ class User extends CI_Controller{
                 redirect('user/login_view');
             }
         }
+    }
+
+    // ログアウト処理
+    public function logout()
+    {
+        if ( $this->session->userdata('is_logged_in') ){
+            $this->session->unset_userdata('email');
+            $this->session->unset_userdata('is_logged_in');
+            $this->session->unset_userdata('user_id');
+        }
+ 
+        redirect('user/login_view');
     }
 }
