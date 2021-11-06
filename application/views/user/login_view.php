@@ -1,6 +1,15 @@
 <body>
-  <?php echo form_open('login/auth'); ?>
-  <div class="d-flex flex-column align-items-center justify-content-center shadow-lg p-5 m-5 bg-white rounded-circle">
+  <?php echo form_open('user/login'); ?>
+    <div class="d-flex 
+                flex-column 
+                align-items-center 
+                justify-content-center 
+                shadow-lg 
+                p-5 
+                m-5 
+                bg-white 
+                rounded-circle"
+    >
     <h2>ログイン</h2>
     <?php echo $this->session->flashdata('msg'); ?>
 

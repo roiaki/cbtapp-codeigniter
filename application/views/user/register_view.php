@@ -1,7 +1,7 @@
 <?php
 ?>
 <body>
-  <?php echo form_open('/user/register'); ?>
+  <?php echo form_open('user/register'); ?>
     <div class="d-flex 
                 flex-column 
                 align-items-center 

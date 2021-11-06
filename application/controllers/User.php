@@ -34,6 +34,7 @@ class User extends CI_Controller{
         $this->load->view('user/login_view');
     }
 
+    // ユーザー登録処理
     public function register()
     {
         $this->form_validation->set_rules('name', '名前', 'required');
@@ -51,7 +52,37 @@ class User extends CI_Controller{
                 redirect('/user/register_view');
             }
         }
-        $this->load->view('/user/register_view');
+        $this->load->view('user/register_view');
+    }
+
+    // ログイン処理
+    public function login()
+    {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('password', 'Password','required|md5');
+ 
+        if( $this->form_validation->run() === FALSE ) {
+            
+            $this->load->view('user/login_view');
+
+        } else {
+
+            if( $user = $this->user_model->get_user_login($email, $password) ) {
+                
+                $this->session->set_userdata('email', $email);
+                $this->session->set_userdata('user_id', $user['id']);
+                $this->session->set_userdata('is_logged_in', true);
+ 
+                $this->load->view('events/index');
+            } else {
+                
+                $this->session->set_flashdata('msg_error', 'Login credentials does match!');
+                redirect('user/login');
+            }
+        }
     }
 
     
