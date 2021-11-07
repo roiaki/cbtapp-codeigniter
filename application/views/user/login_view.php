@@ -23,6 +23,7 @@
              required 
       >
     </div>
+    <?php echo '<div class="text-danger">'.form_error('email'). '</div>'; ?>
 
     <div class="form-group">
       <label for="password">パスワード</label>
@@ -34,6 +35,7 @@
              required
       >
     </div>
+    <?php echo '<div class="text-danger">'.form_error('password'). '</div>'; ?>
 
     <button type="submit" class="col-1 form-control btn btn-success">
       ログイン

@@ -27,9 +27,7 @@
               autofocus
         >
       </div>
-      <?php 
-        echo form_error('name'); 
-      ?>
+      <?php echo '<div class="text-danger">'.form_error('name'). '</div>'; ?>
 
 
       <div class="form-group">
@@ -42,9 +40,7 @@
               required 
         >
       </div>
-      <?php 
-        echo form_error('email'); 
-      ?>
+      <?php echo '<div class="text-danger">'.form_error('email'). '</div>'; ?>
 
       <div class="form-group">
         <label for="password">パスワード</label>
@@ -56,9 +52,7 @@
               required
         >
       </div>
-      <?php 
-        echo form_error('password'); 
-      ?>
+      <?php echo '<div class="text-danger">'.form_error('password'). '</div>'; ?>
 
       <button type="submit" class="col-1 form-control btn btn-success">
         登録する
