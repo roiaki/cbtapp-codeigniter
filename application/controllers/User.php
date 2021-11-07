@@ -83,8 +83,6 @@ class User extends CI_Controller{
                 $this->session->set_userdata('user_id', $user['id']);
                 $this->session->set_userdata('is_logged_in', true);
                 
-                var_dump($user);
-                exit;
                 redirect('event/index');
             } 
             else 

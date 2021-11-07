@@ -56,7 +56,7 @@
           unset($_SESSION['error_content']);
         }
         ?>
-        <button class="btn btn-primary" type="submit">更新</button>
+        <button class="btn btn-primary btn-lg" type="submit">更新</button>
       </form>
     </div>
   </div>
