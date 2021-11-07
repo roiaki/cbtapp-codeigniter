@@ -20,6 +20,10 @@ if (5 <= $hour && $hour <= 12) {
   <!-- BootstrapのCSS読み込み -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/main.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <title><?php echo $html_title; ?></title>
 
 </head>
@@ -61,9 +65,10 @@ if (5 <= $hour && $hour <= 12) {
     </nav>
   </header>
 
-  <div class="bg-image center bg-light p-5  rounded" style="margin-top:10px">
+  <div class="bg-image center bg-white p-5 m-5 rounded-circle shadow-lg">
     <div class="text-center">
-      <h1>認知行動療法的なWebアプリ</h1>
+      <h1 class="animate__bounceInDown">認知行動療法的なWebアプリ</h1>
+	  
       <p style="margin-top:20px">3コラム、7コラムで思考の癖を把握して、<br> 認知のゆがみを取りましょう。</p>
       <h2 style="margin-top:30px">May your heart suffer less</h2>
       <div style="margin-top:40px">
@@ -72,8 +77,8 @@ if (5 <= $hour && $hour <= 12) {
     </div>
   </div>
   <div class="container">
-  <h1>ブランド</h1>
-  <p>ココにサイトの文章が入ります。</p>
+  
+  <div class="heart"></div>
   </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
