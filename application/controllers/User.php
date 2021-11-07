@@ -29,6 +29,7 @@ class User extends CI_Controller{
     // ユーザー登録処理
     public function register()
     {
+        // バリデーションチェック
         $this->form_validation->set_rules('name', '名前', 'required');
         $this->form_validation->set_rules('email', 'メールアドレス', 'required');
         $this->form_validation->set_rules('password', 'パスワード', 'required');
@@ -66,11 +67,12 @@ class User extends CI_Controller{
     // ログイン処理
     public function login()
     {
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
-        
+        // バリデーションチェック
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('password', 'Password','required|md5');
+
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
  
         if( $this->form_validation->run() === FALSE ) 
         { 

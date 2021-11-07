@@ -18,16 +18,7 @@
                         ?>"
           >
         </div>
-        <?php if (isset($_SESSION['error_title'])) {
-          echo '<div class="text-danger">';
-          //var_dump($_SESSION);
-          foreach ($_SESSION['error_title'] as $error) {
-            echo "<div>* $error </div>";
-          }
-          echo '</div>';
-          unset($_SESSION['error_title']);
-        }
-        ?>
+        <?php echo '<div class="text-danger">'.form_error('title'). '</div>'; ?>
 
         <div class="form-group">
           <!-- 内容 -->
@@ -41,16 +32,8 @@
                                 echo $content;
                               } ?></textarea>
         </div>
-        <?php if (isset($_SESSION['error_content'])) {
-          echo '<div class="text-danger">';
-          //var_dump($_SESSION);
-          foreach ($_SESSION['error_content'] as $error) {
-            echo "<div>* $error </div>";
-          }
-          echo '</div>';
-          unset($_SESSION['error_content']);
-        }
-        ?>
+        <?php echo '<div class="text-danger">'.form_error('content'). '</div>'; ?>
+
         <button class="btn btn-primary btn-lg" type="submit">作成</button>
       </form>
     </div>

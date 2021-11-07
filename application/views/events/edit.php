@@ -22,7 +22,8 @@
                         ?>"
           >
         </div>
-       
+        <?php echo '<div class="text-danger">'.form_error('title'). '</div>'; ?>
+
         <div class="form-group">
           <!-- 内容 -->
           <label for="content">出来事 の 内容</label>
@@ -36,6 +37,7 @@
                               }
                              ?></textarea>
         </div>
+        <?php echo '<div class="text-danger">'.form_error('content'). '</div>'; ?>
         
         <button class="btn btn-primary btn-lg" type="submit">更新</button>
       </form>
