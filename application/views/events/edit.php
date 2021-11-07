@@ -6,7 +6,7 @@
       <h3>id = <?php echo $event->id; ?> 番　出来事　編集ページ</h3>
 
       <?php echo form_open('event/update'); ?>
-        <input type="text" name="event_id" 
+        <input type="hidden" name="event_id" 
                value="<?php if (isset($event->id) ) {
                           echo $event->id; 
                       } ?>"
@@ -22,17 +22,7 @@
                         ?>"
           >
         </div>
-        <?php
-        if (isset($_SESSION['error_title'])) {
-          echo '<div class="text-danger">';
-          foreach ($_SESSION['error_title'] as $error) {
-            echo "<div>* $error </div>";
-          }
-          echo '</div>';
-          unset($_SESSION['error_title']);
-        }
-        ?>
-
+       
         <div class="form-group">
           <!-- 内容 -->
           <label for="content">出来事 の 内容</label>
@@ -46,16 +36,7 @@
                               }
                              ?></textarea>
         </div>
-        <?php
-        if (isset($_SESSION['error_content'])) {
-          echo '<div class="text-danger">';
-          foreach ($_SESSION['error_content'] as $error) {
-            echo "<div>* $error </div>";
-          }
-          echo '</div>';
-          unset($_SESSION['error_content']);
-        }
-        ?>
+        
         <button class="btn btn-primary btn-lg" type="submit">更新</button>
       </form>
     </div>

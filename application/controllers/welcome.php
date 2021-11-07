@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['html_title'] = "TOPページ";
+		$this->load->view('commons/head_view', $data);
 		$this->load->view('welcome_message', $data);
 	}
 }

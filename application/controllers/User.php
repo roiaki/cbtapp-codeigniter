@@ -10,7 +10,7 @@ class User extends CI_Controller{
         $this->load->library(array('session', 'form_validation')); 
     }
 
-
+    // 登録画面表示
     public function register_view() 
     {
         $data['html_title'] = '登録';
@@ -18,6 +18,7 @@ class User extends CI_Controller{
         $this->load->view('user/register_view');
     }
 
+    // ログイン画面表示
     public function login_view() 
     {
         $data['html_title'] = 'ログイン';
@@ -96,12 +97,12 @@ class User extends CI_Controller{
     // ログアウト処理
     public function logout()
     {
-        if ( $this->session->userdata('is_logged_in') ){
+        if ( $this->session->userdata('is_logged_in') )
+        {
             $this->session->unset_userdata('email');
             $this->session->unset_userdata('is_logged_in');
             $this->session->unset_userdata('user_id');
         }
- 
         redirect('user/login_view');
     }
 }
