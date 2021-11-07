@@ -19,11 +19,8 @@ if (5 <= $hour && $hour <= 12) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- BootstrapのCSS読み込み -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/main.css">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title><?php echo $html_title; ?></title>
 
 </head>
@@ -66,26 +63,31 @@ if (5 <= $hour && $hour <= 12) {
   </header>
 
   <div class="bg-image center bg-white p-5 m-5 rounded-circle shadow-lg">
+
     <div class="text-center">
-      <h1 class="animate__bounceInDown">認知行動療法的なWebアプリ</h1>
-	  
+      <h1 class="animate__animated animate__pulse animate__infinite">認知行動療法的なWebアプリ</h1>
+
       <p style="margin-top:20px">3コラム、7コラムで思考の癖を把握して、<br> 認知のゆがみを取りましょう。</p>
-      <h2 style="margin-top:30px">May your heart suffer less</h2>
+      <h2 class="animate__animated 
+                 animate__slideInLeft            
+                 animate__slower
+                 animate__delay-3s" 
+                 style="margin-top:30px">May your heart suffer less</h2>
       <div style="margin-top:40px">
-	  <a href="<?php echo base_url('/user/register_view'); ?>"><button class="btn btn-lg btn-success">会員登録</button></a>
+        <a href="<?php echo base_url('/user/register_view'); ?>"><button class="btn btn-lg btn-success">会員登録</button></a>
       </div>
     </div>
   </div>
-  <div class="container">
-  
-  <div class="heart"></div>
+  <div class="container animate__bounce">
+
+    <div class="heart"></div>
   </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
-<script type="text/javascript" src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>

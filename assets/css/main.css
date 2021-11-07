@@ -13,7 +13,7 @@ h1 {
     width: 100px;
     height: 90px;
     left: 50%;
-    margin-top: -45px;
+    margin-top: 50px;
     margin-left: -50px;
     animation: pounding .5s linear infinite alternate;
   }
