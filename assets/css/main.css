@@ -1,0 +1,11 @@
+.bg-img {
+    background-image: url("xxx.jpg");
+    background-size: cover;
+    background-position: center 60%;
+    margin: 100px;
+}
+h1 {
+    
+    font-family: eorgia, serif;
+    
+}

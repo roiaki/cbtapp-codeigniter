@@ -19,13 +19,11 @@ if (5 <= $hour && $hour <= 12) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- BootstrapのCSS読み込み -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/main.css">
   <title><?php echo $html_title; ?></title>
 
 </head>
 
 <body>
-
   <header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <a class="navbar-brand fw-bold ml-5" href="<?php echo base_url('event/index'); ?>">CBT APP</a>
@@ -61,20 +59,17 @@ if (5 <= $hour && $hour <= 12) {
     </nav>
   </header>
 
-  <div class="bg-image center bg-light p-5  rounded" style="margin-top:10px">
+  <div class="center jumbotron" style="margin-top:20px">
     <div class="text-center">
       <h1>認知行動療法的なWebアプリ</h1>
       <p style="margin-top:20px">3コラム、7コラムで思考の癖を把握して、<br> 認知のゆがみを取りましょう。</p>
       <h2 style="margin-top:30px">May your heart suffer less</h2>
       <div style="margin-top:40px">
-	  <a href="<?php echo base_url('/user/register_view'); ?>"><button class="btn btn-lg btn-success">会員登録</button></a>
+        {!! link_to_route('signup.get', '会員登録', [], ['class' => 'btn btn-lg btn-primary']) !!}
       </div>
     </div>
   </div>
-  <div class="container">
-  <h1>ブランド</h1>
-  <p>ココにサイトの文章が入ります。</p>
-  </div>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
