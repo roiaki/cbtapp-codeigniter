@@ -103,6 +103,6 @@ class User extends CI_Controller{
             $this->session->unset_userdata('is_logged_in');
             $this->session->unset_userdata('user_id');
         }
-        redirect('user/login_view');
+        redirect('welcome/index');
     }
 }
