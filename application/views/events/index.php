@@ -24,9 +24,6 @@
           </tr>
         <?php  } ?>
         
-          
-         
-       
       </tbody>
     </table>
     <a href="<?php echo base_url('event/create'); ?>" class="btn btn-primary btn-lg" role="button" aria-pressed="true">新規作成</a>

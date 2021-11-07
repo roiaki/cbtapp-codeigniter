@@ -20,6 +20,7 @@ class Event_model extends CI_Model {
                 ORDER BY 
                   updated_at 
                 DESC";
+                
         $query = $this->db->query($sql);
              
         return $query->result();

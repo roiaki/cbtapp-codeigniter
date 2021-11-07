@@ -41,7 +41,17 @@ class User extends CI_Controller{
             if ( $this->user_model->register_user() ) 
             {
                 $this->session->set_flashdata('msg_success', '登録成功');
-                redirect('user/login_view');
+                
+                $email = $this->input->post('email');
+                $password = $this->input->post('password');
+
+                $user = $this->user_model->get_user_login($email, $password);
+
+                $this->session->set_userdata('email', $email);
+                $this->session->set_userdata('user_id', $user['id']);
+                $this->session->set_userdata('is_logged_in', true);
+
+                redirect('event/index');
             } 
             else 
             {
@@ -73,8 +83,8 @@ class User extends CI_Controller{
                 $this->session->set_userdata('user_id', $user['id']);
                 $this->session->set_userdata('is_logged_in', true);
                 
-                var_dump($_SESSION['email']);
-                //exit;
+                var_dump($user);
+                exit;
                 redirect('event/index');
             } 
             else 

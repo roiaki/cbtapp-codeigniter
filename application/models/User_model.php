@@ -14,6 +14,8 @@ class User_model extends CI_Model {
         $data = [
             'name' => $this->input->post('name'),
             'email' => $this->input->post('email'),
+            'created_at' => date("Y-m-d G:i:s"),
+            'updated_at' => date("Y-m-d G:i:s"),
             'password' => md5( $this->input->post('password') )
         ];
         return $this->db->insert('users', $data);

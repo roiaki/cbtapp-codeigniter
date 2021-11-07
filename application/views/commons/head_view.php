@@ -24,7 +24,7 @@ if (5 <= $hour && $hour <= 12) {
 </head>
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <a class="navbar-brand fw-bold ml-5" href="../events">CBT APP</a>
+    <a class="navbar-brand fw-bold ml-5" href="<?php echo base_url('event/index'); ?>">CBT APP</a>
       <div class="collapse navbar-collapse" id="nav-bar">
         <ul class="navbar-nav mr-auto"></ul>
         <ul class="navbar-nav">
