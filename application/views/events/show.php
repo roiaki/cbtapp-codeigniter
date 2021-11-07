@@ -23,8 +23,6 @@
       </tbody>
       
     </table>
-    <a href="<?php echo base_url('threecolumn/create'); ?>/<?php echo $event->id; ?>" class="btn btn-success btn-lg" role="button" aria-pressed="true">この出来事を元に3コラムを作成
-    </a>
 
     <a href="<?php echo base_url('event/edit'); ?>/<?php echo $event->id; ?>" class="btn btn-primary btn-lg" role="button" aria-pressed="true">編集
     </a>
