@@ -49,13 +49,12 @@ class Event extends CI_Controller
         $this->form_validation->set_rules('title', 'タイトル', 'required');
         $this->form_validation->set_rules('content', '内容', 'required');
 
-        if ($this->form_validation->run() === FALSE) {
-            //$data['html_title'] = '新規作成';
-            //$data['user_id'] = $this->session->userdata('user_id');
-            //$this->load->view('commons/head_view', $data);
-            //$this->load->view('events/create', $data);
+        if ($this->form_validation->run() === FALSE) 
+        {
             $this->create();
-        } else {
+        } 
+        else 
+        {
             $user_id = $this->session->userdata('user_id');
 
             $title = $this->input->post('title');
@@ -127,28 +126,16 @@ class Event extends CI_Controller
     // 更新処理 バリデーションエラーの時どう書くか分からないので一旦バリデーションチェックを飛ばす
     public function update()
     {
-        /*
         // バリデーションチェック
         $this->form_validation->set_rules('title', 'タイトル', 'required');
         $this->form_validation->set_rules('content', '内容', 'required');
 
-        if ($this->form_validation->run() === FALSE) {
-            $data['html_title'] = '編集';
-
-            //$event_id = $id;
-            $userdata = $this->session->all_userdata();
-
-            $data['email'] = $userdata['email'];
-            $data['user_id'] = $userdata['user_id'];
-            $data['is_logged_in'] = $userdata['is_logged_in'];
-
-            $data['user_id'] = $this->session->userdata('user_id');
-            //$data['event'] = $this->Event_model->get_event($event_id);
-
-            $this->load->view('commons/head_view', $data);
-            $this->load->view('events/edit', $data);
-
-        } else {
+        if ($this->form_validation->run() === FALSE) 
+        {
+            redirect('event/edit');
+        } 
+        else 
+        {
             $user_id = $this->session->userdata('user_id');
             $title = $this->input->post('title');
             $content = $this->input->post('content');
@@ -166,22 +153,6 @@ class Event extends CI_Controller
             $this->db->update('events', $data);
             redirect('event/index');
         }
-        */
-            $user_id = $this->session->userdata('user_id');
-            $title = $this->input->post('title');
-            $content = $this->input->post('content');
-            $event_id = $this->input->post('event_id');
-            $updated_at = date("Y-m-d G:i:s");
-
-            $data = [
-                'user_id' => $user_id,
-                'title' => $title,
-                'content' => $content,
-                'updated_at' => $updated_at
-            ];
-
-            $this->db->where('id', $event_id);
-            $this->db->update('events', $data);
-            redirect('event/index');
+        
     }
 }
