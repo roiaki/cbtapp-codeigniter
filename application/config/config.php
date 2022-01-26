@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'https://example.com/';
+$config['base_url'] = 'http://localhost/test_app/'; // https://example.com -> localhostへ変更
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ $config['base_url'] = 'https://example.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = ''; // 空白に変更　ヘルパー関数のURLからもindex.phpが削除
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'japanese';
 
 /*
 |--------------------------------------------------------------------------
@@ -226,7 +226,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'ee0ef120c1c6222942d2afc9107d0ca8'; // 追加　暗号化キー？
 
 /*
 |--------------------------------------------------------------------------

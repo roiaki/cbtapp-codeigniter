@@ -1,0 +1,43 @@
+.bg-img {
+    background-image: url("xxx.jpg");
+    background-size: cover;
+    background-position: center 60%;
+    
+}
+h1 {
+    
+}
+
+.heart {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    left: 50%;
+    margin-top: 50px;
+    margin-left: -50px;
+    animation: pounding .5s linear infinite alternate;
+  }
+  .heart:before,
+  .heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #f88dc8;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  .heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+  }
+
+  
+ @keyframes pounding{
+   0%{ transform: scale(1.5); }
+   100%{ transform: scale(1); }
+ }
