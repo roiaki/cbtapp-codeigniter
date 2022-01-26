@@ -10,3 +10,5 @@ application/logs/*
 /vendor
 /tests
 
+.vscode
+.env
